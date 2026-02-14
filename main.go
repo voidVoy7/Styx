@@ -23,9 +23,16 @@ func main() {
 		modules.InstallCommand(os.Args[2:])
 	case "search":
 		modules.SearchCommand(os.Args[2:])
+	case "remove":
+		modules.RemoveCommand(os.Args[2:])
 	default:
 		fmt.Println("Unknown command:", os.Args[1])
-		fmt.Println("Commands: update")
+		fmt.Println("Commands:")
+		fmt.Println("  update")
+		fmt.Println("  upgrade")
+		fmt.Println("  install")
+		fmt.Println("  search")
+		fmt.Println("  remove")
 		os.Exit(1)
 	}
 }
