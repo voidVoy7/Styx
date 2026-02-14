@@ -8,7 +8,7 @@ import (
 	"github.com/spf13/pflag"
 )
 
-func SearchCommand(args []string) {
+func BrewSearchCommand(args []string) {
 	searchFlags := pflag.NewFlagSet("search", pflag.ExitOnError)
 
 	verbose := searchFlags.BoolP("verbose", "v", false, "show extra output")

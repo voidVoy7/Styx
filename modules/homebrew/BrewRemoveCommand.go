@@ -8,7 +8,7 @@ import (
 	"github.com/spf13/pflag"
 )
 
-func RemoveCommand(args []string) {
+func BrewRemoveCommand(args []string) {
 	removeFlags := pflag.NewFlagSet("remove", pflag.ExitOnError)
 
 	verbose := removeFlags.BoolP("verbose", "v", false, "show extra output")

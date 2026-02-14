@@ -8,7 +8,7 @@ import (
 	"github.com/spf13/pflag"
 )
 
-func UpdateCommand(args []string) {
+func BrewUpdateCommand(args []string) {
 	updateFlags := pflag.NewFlagSet("update", pflag.ExitOnError)
 
 	verbose := updateFlags.BoolP("verbose", "v", false, "show extra output")

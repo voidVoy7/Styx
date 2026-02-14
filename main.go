@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/Bowser/modules"
+	modules "github.com/Bowser/modules/homebrew"
 )
 
 func main() {
@@ -16,15 +16,15 @@ func main() {
 
 	switch os.Args[1] {
 	case "update":
-		modules.UpdateCommand(os.Args[2:])
+		modules.BrewUpdateCommand(os.Args[2:])
 	case "upgrade":
-		modules.UpgradeCommmand(os.Args[2:])
+		modules.BrewUpgradeCommmand(os.Args[2:])
 	case "install":
-		modules.InstallCommand(os.Args[2:])
+		modules.BrewInstallCommand(os.Args[2:])
 	case "search":
-		modules.SearchCommand(os.Args[2:])
+		modules.BrewSearchCommand(os.Args[2:])
 	case "remove":
-		modules.RemoveCommand(os.Args[2:])
+		modules.BrewRemoveCommand(os.Args[2:])
 	default:
 		fmt.Println("Unknown command:", os.Args[1])
 		fmt.Println("Commands:")

@@ -8,7 +8,7 @@ import (
 	"github.com/spf13/pflag"
 )
 
-func InstallCommand(args []string) {
+func BrewInstallCommand(args []string) {
 	installFlags := pflag.NewFlagSet("install", pflag.ExitOnError)
 
 	verbose := installFlags.BoolP("verbose", "v", false, "show extra output")
