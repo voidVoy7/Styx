@@ -5,7 +5,8 @@ import (
 	"log"
 	"os"
 
-	modules "github.com/Bowser/modules/homebrew"
+	homebrew "github.com/Bowser/modules/homebrew"
+	zypper "github.com/Bowser/modules/zypper"
 	"github.com/hairyhenderson/go-which"
 )
 
@@ -13,11 +14,15 @@ func main() {
 	if len(os.Args) < 2 {
 		fmt.Println("Usage: bowser <command>")
 		fmt.Println("Commands:")
+		fmt.Println("---homebrew---")
 		fmt.Println("  update")
 		fmt.Println("  upgrade")
 		fmt.Println("  install")
 		fmt.Println("  search")
 		fmt.Println("  remove")
+		fmt.Println("---zypper---")
+		fmt.Println("  update")
+		fmt.Println("  patch")
 		os.Exit(1)
 	}
 
@@ -31,15 +36,15 @@ func main() {
 	case "brew":
 		switch os.Args[1] {
 		case "update":
-			modules.BrewUpdateCommand(os.Args[2:])
+			homebrew.BrewUpdateCommand(os.Args[2:])
 		case "upgrade":
-			modules.BrewUpgradeCommmand(os.Args[2:])
+			homebrew.BrewUpgradeCommmand(os.Args[2:])
 		case "install":
-			modules.BrewInstallCommand(os.Args[2:])
+			homebrew.BrewInstallCommand(os.Args[2:])
 		case "search":
-			modules.BrewSearchCommand(os.Args[2:])
+			homebrew.BrewSearchCommand(os.Args[2:])
 		case "remove":
-			modules.BrewRemoveCommand(os.Args[2:])
+			homebrew.BrewRemoveCommand(os.Args[2:])
 		default:
 			fmt.Println("Unknown command:", os.Args[1])
 			fmt.Println("Commands:")
@@ -52,7 +57,19 @@ func main() {
 		}
 
 	case "zypper":
-		fmt.Println("PLACEHOLDER TEXT")
+
+		switch os.Args[1] {
+		case "update":
+			zypper.ZypperUpdateCommand(os.Args[2:])
+		case "patch":
+			zypper.ZypperPatchCommand(os.Args[2:])
+
+		default:
+			fmt.Println("Unknown command:", os.Args[1])
+			fmt.Println("Commands:")
+			fmt.Println("  update")
+			fmt.Println("  patch")
+		}
 	}
 
 }
