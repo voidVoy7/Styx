@@ -13,6 +13,7 @@ import (
 func main() {
 	if len(os.Args) < 2 {
 		fmt.Println("Usage: bowser <command>")
+		fmt.Println()
 		fmt.Println("Commands:")
 		fmt.Println("---homebrew---")
 		fmt.Println("  update")
@@ -23,6 +24,7 @@ func main() {
 		fmt.Println("---zypper---")
 		fmt.Println("  update")
 		fmt.Println("  patch")
+		fmt.Println("  search")
 		os.Exit(1)
 	}
 
@@ -63,12 +65,15 @@ func main() {
 			zypper.ZypperUpdateCommand(os.Args[2:])
 		case "patch":
 			zypper.ZypperPatchCommand(os.Args[2:])
+		case "search":
+			zypper.ZypperSearchCommand(os.Args[2:])
 
 		default:
 			fmt.Println("Unknown command:", os.Args[1])
 			fmt.Println("Commands:")
 			fmt.Println("  update")
 			fmt.Println("  patch")
+			fmt.Println("  search")
 		}
 	}
 
