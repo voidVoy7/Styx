@@ -63,13 +63,13 @@ func main() {
 
 		switch os.Args[1] {
 		case "update":
-			zypper.ZypperUpdateCommand(os.Args[2:])
+			zypper.ZypperUpdateCommand(os.Args[3:])
 		case "patch":
 			zypper.ZypperPatchCommand(os.Args[2:])
 		case "search":
 			zypper.ZypperSearchCommand(os.Args[2:])
 		case "upgrade":
-			zypper.ZypperDistUpgradeCommand(os.Args[2:])
+			zypper.ZypperDistUpgradeCommand(os.Args[3:])
 
 		default:
 			fmt.Println("Unknown command:", os.Args[1])
