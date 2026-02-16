@@ -11,7 +11,7 @@ import (
 func ZypperDistUpgradeCommand(args []string) {
 	distFlag := pflag.NewFlagSet("upgrade", pflag.ExitOnError)
 	distFlag.Usage = func() {
-		fmt.Println("Usage: bowser upgrade [options] <package>")
+		fmt.Println("Usage: bowser upgrade [options]")
 		fmt.Println()
 		fmt.Println("Options:")
 		distFlag.PrintDefaults()
@@ -23,7 +23,7 @@ func ZypperDistUpgradeCommand(args []string) {
 
 	distFlag.Parse(args)
 
-	zypperArgs := []string{"upgrade"}
+	zypperArgs := []string{"dist-upgrade"}
 
 	if *useDetails {
 		zypperArgs = append(zypperArgs, "--details")
