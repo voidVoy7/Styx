@@ -1,4 +1,4 @@
-module github.com/Bowser
+module github.com/Styx
 
 go 1.25.5
 

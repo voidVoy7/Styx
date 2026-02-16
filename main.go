@@ -5,8 +5,8 @@ import (
 	"log"
 	"os"
 
-	homebrew "github.com/Bowser/modules/homebrew"
-	zypper "github.com/Bowser/modules/zypper"
+	homebrew "github.com/Styx/modules/homebrew"
+	zypper "github.com/Styx/modules/zypper"
 	"github.com/hairyhenderson/go-which"
 )
 
