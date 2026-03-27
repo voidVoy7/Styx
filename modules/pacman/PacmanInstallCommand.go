@@ -36,7 +36,7 @@ func PacmanInstallCommand(args []string) {
 		return
 	}
 
-	pacmanArgs := []string{"install"}
+	pacmanArgs := []string{"-S"}
 
 	pacmanArgs = append(pacmanArgs, pkgs...)
 
