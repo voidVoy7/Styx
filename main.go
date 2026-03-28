@@ -6,6 +6,7 @@ import (
 	"os"
 
 	homebrew "github.com/Styx/modules/homebrew"
+	pacman "github.com/Styx/modules/pacman"
 	zypper "github.com/Styx/modules/zypper"
 	"github.com/hairyhenderson/go-which"
 )
@@ -28,6 +29,11 @@ func main() {
 		fmt.Println("  search")
 		fmt.Println("  install")
 		fmt.Println("  remove")
+		fmt.Println("---pacman---")
+		fmt.Println("  install")
+		fmt.Println("  remove")
+		fmt.Println("  search")
+		fmt.Println("  update")
 		os.Exit(1)
 	}
 
@@ -37,6 +43,25 @@ func main() {
 	}
 
 	switch pm {
+
+	case "pacman":
+		switch os.Args[1] {
+		case "install":
+			pacman.PacmanInstallCommand(os.Args[2:])
+		case "search":
+			pacman.PacmanSearchCommand(os.Args[2:])
+		case "remove":
+			pacman.PacmanRemoveCommand(os.Args[2:])
+		case "update":
+			pacman.PacmanUpdateCommand(os.Args[2:])
+		default:
+			fmt.Println("Unknown command:", os.Args[1])
+			fmt.Println("Commands:")
+			fmt.Println("  install")
+			fmt.Println("  remove")
+			fmt.Println("  search")
+			fmt.Println("  update")
+		}
 
 	case "brew":
 		switch os.Args[1] {
@@ -92,7 +117,7 @@ func main() {
 }
 
 func PackageManagerCheck() (string, bool) {
-	supported := []string{"brew", "zypper"}
+	supported := []string{"brew", "zypper", "pacman"}
 
 	for _, candidate := range supported {
 		if which.Found(candidate) {

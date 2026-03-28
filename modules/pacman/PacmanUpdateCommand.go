@@ -1,4 +1,4 @@
-package zypper
+package pacman
 
 import (
 	"fmt"
@@ -8,7 +8,7 @@ import (
 	"github.com/spf13/pflag"
 )
 
-func ZypperUpdateCommand(args []string) {
+func PacmanUpdateCommand(args []string) {
 	updateFlag := pflag.NewFlagSet("update", pflag.ExitOnError)
 	updateFlag.Usage = func() {
 		fmt.Println("Usage: styx update [option]")
@@ -19,18 +19,13 @@ func ZypperUpdateCommand(args []string) {
 
 	help := updateFlag.BoolP("help", "h", false, "show helpful information")
 	verbose := updateFlag.BoolP("verbose", "v", false, "show extra output")
-	useDetails := updateFlag.BoolP("details", "d", false, "show more details of the update process")
 
 	updateFlag.Parse(args)
 
-	zypperArgs := []string{"update"}
-
-	if *useDetails {
-		zypperArgs = append(zypperArgs, "--details")
-	}
+	pacmanArgs := []string{"-Syu"}
 
 	if *verbose {
-		fmt.Println("Running: zypper update")
+		fmt.Println("Running: pacman -Syu")
 	}
 
 	if *help {
@@ -38,14 +33,14 @@ func ZypperUpdateCommand(args []string) {
 		return
 	}
 
-	cmd := exec.Command("zypper", zypperArgs...)
+	cmd := exec.Command("pacman", pacmanArgs...)
 	cmd.Stdin = os.Stdin
 	cmd.Stdout = os.Stdout
 	cmd.Stderr = os.Stderr
 
 	err := cmd.Run()
 	if err != nil {
-		fmt.Println("zypper update failed:", err)
+		fmt.Println("pacman -Syu failed:", err)
 		os.Exit(1)
 	}
 }
