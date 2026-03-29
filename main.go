@@ -37,6 +37,17 @@ func main() {
 		os.Exit(1)
 	}
 
+	// Super sneaky easter egg handling :P
+	cmd := os.Args[1]
+	switch cmd {
+	case "sao":
+		fmt.Println("I'd rather trust and regret than doubt and regret. - Kirigaya Kazuto 'Kirito' Sword Art Online")
+		return
+	case "konami":
+		fmt.Println("↑ ↑ ↓ ↓ ← → ← → B A")
+		return
+	}
+
 	pm, ok := PackageManagerCheck()
 	if !ok {
 		log.Fatal("no supported package manager found")
