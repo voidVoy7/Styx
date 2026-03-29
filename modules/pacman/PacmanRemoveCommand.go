@@ -36,12 +36,12 @@ func PacmanRemoveCommand(args []string) {
 		return
 	}
 
-	pacmanArgs := []string{"-Rcns"}
+	pacmanArgs := []string{"-Rc"}
 
 	pacmanArgs = append(pacmanArgs, pkgs...)
 
 	if *verbose {
-		fmt.Println("Running: pacman -Rcns")
+		fmt.Println("Running: pacman -Rc")
 	}
 
 	cmd := exec.Command("pacman", pacmanArgs...)
@@ -51,7 +51,7 @@ func PacmanRemoveCommand(args []string) {
 
 	err := cmd.Run()
 	if err != nil {
-		fmt.Println("pacman -Rcns failed:", err)
+		fmt.Println("pacman -Rc failed:", err)
 		os.Exit(1)
 	}
 }
