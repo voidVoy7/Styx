@@ -2,3 +2,7 @@
 build.sh
 Styx
 styx
+pkg/
+src/
+Styx-*.tar.zst
+*.tar.gz
