@@ -8,7 +8,7 @@ url="https://github.com/voidVoy7/Styx"
 license=('GPL-3.0')
 makedepends=('go')
 source=("https://github.com/voidVoy7/Styx/archive/refs/tags/${pkgver}.tar.gz")
-sha256sums=('982083504968cb81b82ca5680d4bb588d4f40b64a4dada57dc8a50a5bc39e1ba')
+sha256sums=('f86e13efe340cf4a055d8f3c3d353206ed12e0bc12716714e24dd31a92d0d141')
 
 build() {
 	cd "$pkgname-$pkgver"
