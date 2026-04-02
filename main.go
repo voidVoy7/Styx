@@ -35,6 +35,7 @@ func main() {
 		fmt.Println("  remove")
 		fmt.Println("  search")
 		fmt.Println("  update")
+		fmt.Println("  query")
 		fmt.Println("---xbps---")
 		fmt.Println("  install")
 		fmt.Println("  remove")
@@ -71,6 +72,8 @@ func main() {
 			pacman.PacmanRemoveCommand(os.Args[2:])
 		case "update":
 			pacman.PacmanUpdateCommand(os.Args[2:])
+		case "query":
+			pacman.PacmanQueryCommand(os.Args[2:])
 		default:
 			fmt.Println("Unknown command:", os.Args[1])
 			fmt.Println("Commands:")
@@ -78,6 +81,7 @@ func main() {
 			fmt.Println("  remove")
 			fmt.Println("  search")
 			fmt.Println("  update")
+			fmt.Println("  query")
 		}
 
 	case "brew":
