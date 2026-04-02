@@ -11,7 +11,7 @@ import (
 func BrewSearchCommand(args []string) {
 	searchFlags := pflag.NewFlagSet("search", pflag.ExitOnError)
 	searchFlags.Usage = func() {
-		fmt.Println("Usage: styx search [option] <package>")
+		fmt.Println("Usage: ow search [option] <package>")
 		fmt.Println()
 		fmt.Println("Options:")
 		searchFlags.PrintDefaults()
@@ -34,7 +34,7 @@ func BrewSearchCommand(args []string) {
 	pkgs := searchFlags.Args()
 
 	if len(pkgs) == 0 {
-		fmt.Println("Invalid usage: styx search requires a package name")
+		fmt.Println("Invalid usage: ow search requires a package name")
 		fmt.Println()
 		searchFlags.Usage()
 		return

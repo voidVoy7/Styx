@@ -1,4 +1,4 @@
-module github.com/Styx
+module github.com/Omniwrap
 
 go 1.25.5
 

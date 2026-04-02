@@ -11,7 +11,7 @@ import (
 func ZypperDistUpgradeCommand(args []string) {
 	distFlag := pflag.NewFlagSet("upgrade", pflag.ExitOnError)
 	distFlag.Usage = func() {
-		fmt.Println("Usage: bowser upgrade [options]")
+		fmt.Println("Usage: ow upgrade [options]")
 		fmt.Println()
 		fmt.Println("Options:")
 		distFlag.PrintDefaults()

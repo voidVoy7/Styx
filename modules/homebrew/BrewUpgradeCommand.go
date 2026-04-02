@@ -11,7 +11,7 @@ import (
 func BrewUpgradeCommmand(args []string) {
 	upgradeflags := pflag.NewFlagSet("upgrade", pflag.ExitOnError)
 	upgradeflags.Usage = func() {
-		fmt.Println("Usage: styx upgrade [option]")
+		fmt.Println("Usage: ow upgrade [option]")
 		fmt.Println()
 		fmt.Println("Options:")
 		upgradeflags.PrintDefaults()

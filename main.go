@@ -5,16 +5,16 @@ import (
 	"log"
 	"os"
 
-	homebrew "github.com/Styx/modules/homebrew"
-	pacman "github.com/Styx/modules/pacman"
-	"github.com/Styx/modules/xbps"
-	zypper "github.com/Styx/modules/zypper"
+	homebrew "github.com/Omniwrap/modules/homebrew"
+	pacman "github.com/Omniwrap/modules/pacman"
+	xbps "github.com/Omniwrap/modules/xbps"
+	zypper "github.com/Omniwrap/modules/zypper"
 	"github.com/hairyhenderson/go-which"
 )
 
 func main() {
 	if len(os.Args) < 2 {
-		fmt.Println("Usage: styx <command>")
+		fmt.Println("Usage: ow <command>")
 		fmt.Println()
 		fmt.Println("Commands:")
 		fmt.Println("---homebrew---")

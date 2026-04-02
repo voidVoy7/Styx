@@ -11,7 +11,7 @@ import (
 func BrewRemoveCommand(args []string) {
 	removeFlags := pflag.NewFlagSet("remove", pflag.ExitOnError)
 	removeFlags.Usage = func() {
-		fmt.Println("Usage: styx remove [option] <package>")
+		fmt.Println("Usage: ow remove [option] <package>")
 		fmt.Println()
 		fmt.Println("Options:")
 		removeFlags.PrintDefaults()
@@ -35,7 +35,7 @@ func BrewRemoveCommand(args []string) {
 	pkgs := removeFlags.Args()
 
 	if len(pkgs) == 0 {
-		fmt.Println("Invalid usage: styx remove requires a package name")
+		fmt.Println("Invalid usage: ow remove requires a package name")
 		fmt.Println()
 		removeFlags.Usage()
 		return

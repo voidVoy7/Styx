@@ -11,7 +11,7 @@ import (
 func ZypperPatchCommand(args []string) {
 	patchFlag := pflag.NewFlagSet("patch", pflag.ExitOnError)
 	patchFlag.Usage = func() {
-		fmt.Println("Usage: styx patch [option]")
+		fmt.Println("Usage: ow patch [option]")
 		fmt.Println()
 		fmt.Println("Options:")
 		patchFlag.PrintDefaults()

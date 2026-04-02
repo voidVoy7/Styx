@@ -11,7 +11,7 @@ import (
 func ZypperUpdateCommand(args []string) {
 	updateFlag := pflag.NewFlagSet("update", pflag.ExitOnError)
 	updateFlag.Usage = func() {
-		fmt.Println("Usage: styx update [option]")
+		fmt.Println("Usage: ow update [option]")
 		fmt.Println()
 		fmt.Println("Options:")
 		updateFlag.PrintDefaults()

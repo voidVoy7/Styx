@@ -11,7 +11,7 @@ import (
 func ZypperRemoveCommand(args []string) {
 	removeFlag := pflag.NewFlagSet("remove", pflag.ExitOnError)
 	removeFlag.Usage = func() {
-		fmt.Println("Usage: styx remove [option] <package>")
+		fmt.Println("Usage: ow remove [option] <package>")
 		fmt.Println()
 		fmt.Println("Options:")
 		removeFlag.PrintDefaults()
@@ -31,7 +31,7 @@ func ZypperRemoveCommand(args []string) {
 	pkgs := removeFlag.Args()
 
 	if len(pkgs) == 0 {
-		fmt.Println("Invalid usage: styx remove requires a package name")
+		fmt.Println("Invalid usage: ow remove requires a package name")
 		fmt.Println()
 		removeFlag.Usage()
 		return

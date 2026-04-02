@@ -11,7 +11,7 @@ import (
 func XbpsSearchCommand(args []string) {
 	searchFlag := pflag.NewFlagSet("query", pflag.ExitOnError)
 	searchFlag.Usage = func() {
-		fmt.Println("Usage: styx query [option] <package>")
+		fmt.Println("Usage: ow query [option] <package>")
 		fmt.Println()
 		fmt.Println("Options")
 		searchFlag.PrintDefaults()
@@ -37,7 +37,7 @@ func XbpsSearchCommand(args []string) {
 	pkgs := searchFlag.Args()
 
 	if len(pkgs) == 0 || len(args) == 0 {
-		fmt.Println("Invalid usage: styx search requires a package name")
+		fmt.Println("Invalid usage: ow search requires a package name")
 		fmt.Println()
 		searchFlag.Usage()
 		return

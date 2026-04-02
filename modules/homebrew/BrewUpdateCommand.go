@@ -11,7 +11,7 @@ import (
 func BrewUpdateCommand(args []string) {
 	updateFlags := pflag.NewFlagSet("update", pflag.ExitOnError)
 	updateFlags.Usage = func() {
-		fmt.Println("Usage: styx update [option]")
+		fmt.Println("Usage: ow update [option]")
 		fmt.Println()
 		fmt.Println("Options:")
 		updateFlags.PrintDefaults()

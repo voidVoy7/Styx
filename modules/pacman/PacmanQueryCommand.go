@@ -11,7 +11,7 @@ import (
 func PacmanQueryCommand(args []string) {
 	queryFlag := pflag.NewFlagSet("query", pflag.ExitOnError)
 	queryFlag.Usage = func() {
-		fmt.Println("Usage: styx query [option] <package>")
+		fmt.Println("Usage: ow query [option] <package>")
 		fmt.Println()
 		fmt.Println("Options:")
 		queryFlag.PrintDefaults()
@@ -37,7 +37,7 @@ func PacmanQueryCommand(args []string) {
 	pkgs := queryFlag.Args()
 
 	if len(pkgs) == 0 {
-		fmt.Println("Invalid usage: styx query requires a package name")
+		fmt.Println("Invalid usage: ow query requires a package name")
 		fmt.Println()
 		queryFlag.Usage()
 		return

@@ -11,7 +11,7 @@ import (
 func PacmanSearchCommand(args []string) {
 	searchFlag := pflag.NewFlagSet("search", pflag.ExitOnError)
 	searchFlag.Usage = func() {
-		fmt.Println("Usage: styx search [option] <package>")
+		fmt.Println("Usage: ow search [option] <package>")
 		fmt.Println()
 		fmt.Println("Options:")
 		searchFlag.PrintDefaults()
@@ -30,7 +30,7 @@ func PacmanSearchCommand(args []string) {
 	pkgs := searchFlag.Args()
 
 	if len(pkgs) == 0 {
-		fmt.Println("Invalid usage: styx search requires a package name")
+		fmt.Println("Invalid usage: ow search requires a package name")
 		fmt.Println()
 		searchFlag.Usage()
 		return

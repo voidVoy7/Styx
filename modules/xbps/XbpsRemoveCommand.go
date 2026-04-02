@@ -11,7 +11,7 @@ import (
 func XbpsRemoveCommand(args []string) {
 	removeFlag := pflag.NewFlagSet("remove", pflag.ExitOnError)
 	removeFlag.Usage = func() {
-		fmt.Println("Usage: styx remove [option] <package>")
+		fmt.Println("Usage: ow remove [option] <package>")
 		fmt.Println()
 		fmt.Println("Options")
 		removeFlag.PrintDefaults()
@@ -35,7 +35,7 @@ func XbpsRemoveCommand(args []string) {
 	pkgs := removeFlag.Args()
 
 	if len(pkgs) == 0 || len(args) == 0 {
-		fmt.Println("Invalid usage: styx remove requires a package name")
+		fmt.Println("Invalid usage: ow remove requires a package name")
 		fmt.Println()
 		removeFlag.Usage()
 		return

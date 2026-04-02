@@ -11,7 +11,7 @@ import (
 func ZypperInstallCommand(args []string) {
 	installFlag := pflag.NewFlagSet("install", pflag.ExitOnError)
 	installFlag.Usage = func() {
-		fmt.Println("Usage: styx install [option] <package>")
+		fmt.Println("Usage: ow install [option] <package>")
 		fmt.Println()
 		fmt.Println("Options:")
 		installFlag.PrintDefaults()
@@ -31,7 +31,7 @@ func ZypperInstallCommand(args []string) {
 	pkgs := installFlag.Args()
 
 	if len(pkgs) == 0 {
-		fmt.Println("Invalid usage: styx install requires a package name")
+		fmt.Println("Invalid usage: ow install requires a package name")
 		fmt.Println()
 		installFlag.Usage()
 		return

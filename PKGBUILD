@@ -1,10 +1,10 @@
 # Maintainer: voidVoy7 <voidvoy7@proton.me>
-pkgname=Styx
+pkgname=Omniwrap
 pkgver=1.0
 pkgrel=0
 pkgdesc="A Package Manager wrapper"
 arch=("x86_64")
-url="https://github.com/voidVoy7/Styx"
+url="https://github.com/voidVoy7/Omniwrap"
 license=('GPL-3.0')
 makedepends=('go')
 source=("https://github.com/voidVoy7/Styx/archive/refs/tags/${pkgver}.tar.gz")
@@ -17,6 +17,6 @@ build() {
 
 package() {
 	cd "$pkgname-$pkgver"
-	mv Styx styx
-	install -Dm0755 -t "$pkgdir/usr/bin/" "styx"
+	mv Omniwrap ow
+	install -Dm0755 -t "$pkgdir/usr/bin/" "ow"
 }
