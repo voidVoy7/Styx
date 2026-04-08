@@ -1,5 +1,7 @@
 # Omniwrap - A Package Manager wrapper
 
+#### _Please keep in mind that Omniwrap is still heavily in development therefore a lot of the expected features might be missing as of right now._
+
 ### What does it do?
 Omniwrap helps you use different package managers on multiple supported distro's. It does so by providing you with simple commands so you don't have to memorize different ones for each package manager.
 
